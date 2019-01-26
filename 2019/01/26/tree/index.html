@@ -27,65 +27,61 @@
 </html>
 <body class="loading">
     <div id="loader"></div>
-    <div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="http://area.sinaapp.com/bingImg" id="cover" width="1920" height="1080">
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">tree</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
     </div>
-    <div id="vibrant">
-        <!-- <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg> -->
-    </div>
-    <div class="search">
-        <h1>命令知否</h1>
-        <input class="form-control search clearable" placeholder="搜索命令名，例如：ls" autocomplete="off" autofocus tabindex="0" autocorrect="off" autocapitalize="off" spellcheck="false" id="search">
-        <div class="search-result" id="search-result">
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">tree</h1>
+        <div class="stuff">
+            <span>一月 26, 2019</span>
+            
 
         </div>
-    </div>
-</div>
-    <div id="primary">
+        <div class="content markdown">
+            
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
         
-<div class="post">
-    <a href="/2019/01/26/cd/" title="cd">
-        <img src="http://area.sinaapp.com/bingImg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>一月 26, 2019</p>
-        <h3><a href="/2019/01/26/cd/" title="cd" class="posttitle">cd</a></h3>
-        <p>cd 切换用户当前目录用来切换用户当前目录当指定目录，这个指定目录可以是相对路径也可以是绝对路径一些常用的特殊符号：
-
-~   用户主目录
-.    当前...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2019/01/26/ls/" title="ls">
-        <img src="http://area.sinaapp.com/bingImg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>一月 26, 2019</p>
-        <h3><a href="/2019/01/26/ls/" title="ls" class="posttitle">ls</a></h3>
-        <p>ls 显示指定目录下的文件和文件夹用来查看当前目录或指定目录下的有那些文件和文件夹一些常用参数：
-
--a  显示全部文件
--l   所有信息用单列显示
--...</p>
-    </div>
-</div>
+    <div id="gitalk-container" class="comment link" data-ae="false" data-ci="" data-cs="" data-r="" data-o="" data-a="" data-d="false">查看评论</div>
 
 
     </div>
     
 </div>
-<div id="preview"></div>
 
+
+    </div>
+</div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
