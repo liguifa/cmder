@@ -87,6 +87,79 @@
 </div>
 
 
+<script>
+    (function ($) {
+        $.fn.snow = function (options) {
+            var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
+                documentHeight = $(document).height(),
+                documentWidth = $(document).width(),
+                defaults = {
+                    minSize: 10,
+                    maxSize: 20,
+                    newOn: 1000,
+                    flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                },
+                options = $.extend({}, defaults, options);
+            var interval = setInterval(function () {
+                var startPositionLeft = Math.random() * documentWidth - 100,
+                    startOpacity = 0.5 + Math.random(),
+                    sizeFlake = options.minSize + Math.random() * options.maxSize,
+                    endPositionTop = documentHeight,
+                    endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                    durationFall = documentHeight * 10 + Math.random() * 5000;
+                $flake.clone().appendTo('body').css({
+                    left: startPositionLeft,
+                    opacity: startOpacity,
+                    'font-size': sizeFlake,
+                    color: options.flakeColor
+                }).animate({
+                    top: endPositionTop,
+                    left: endPositionLeft,
+                    opacity: 0.2
+                }, durationFall, 'linear', function () {
+                    $(this).remove()
+                });
+            }, options.newOn);
+        };
+    })(jQuery);
+    $(function () {
+        $.fn.snow({
+            minSize: 5, /* 定义雪花最小尺寸 */
+            maxSize: 50,/* 定义雪花最大尺寸 */
+            newOn: 100  /* 定义密集程度，数字越小越密集 */
+        });
+        var posts = null;
+        $.ajax({
+            type: "get",
+            url: "/cmder/search.json",
+            success: function (data) {
+                posts = data;
+            }
+        })
+        function getTagIconByTag(name) {
+            switch(name) {
+                case "Windows": return "http://tous-logos.com/wp-content/uploads/2017/04/Windows-logo.png";
+                case "Linux": return "https://tse3.mm.bing.net/th?id=OIP.hYr3PjRLGAm7nluRO3PCcwHaIL&pid=Api&w=1979&h=2186&rs=1&p=0";
+            }
+        }
+        $("#search").on("input", function(e){
+            var result = e.target.value === "" ? [] : posts.filter(function(post) {
+                return (new RegExp(e.target.value)).test(post.title)
+            });
+            if(result.length > 0) {
+                var list = document.createElement("ul");
+                for(var i in posts) {
+                    var tag = '<div class="search-tag"><img class="search-tag-dot" src="'+getTagIconByTag(posts[i]["tags"][0])+'" /><span>'+posts[i]["tags"][0]+'</span></div>';
+                    list.innerHTML += "<li><a href='/cmder/"+posts[i].url+"' target='_blank'>"+posts[i].title+"</a>"+tag+"</li>";
+                }
+                $("#search-result").html(list);
+                $("#search-result").css("display", "block");
+            } else {
+                $("#search-result").css("display", "none");
+            }
+        });
+    });
+</script>
 
 
 </html>
