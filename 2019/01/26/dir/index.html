@@ -30,7 +30,89 @@ dir (选项) [path]
 </html>
 <body class="loading">
     <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">dir</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class="main">
+        <h1 class="title">dir</h1>
+        <div class="stuff">
+            <span>一月 26, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Windows/">Windows</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h3 id="dir-显示指定目录下的文件和文件夹"><a href="#dir-显示指定目录下的文件和文件夹" class="headerlink" title="dir 显示指定目录下的文件和文件夹"></a>dir 显示指定目录下的文件和文件夹</h3><p>用来查看当前目录或指定目录下的有那些文件和文件夹</p>
+<blockquote>
+<p>dir (选项) [path]</p>
+</blockquote>
+<p>一些常用选项：</p>
+<ul>
+<li>/A:H 显示隐藏文件</li>
+<li>/A:D 显示目录</li>
+</ul>
+<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dir ./ //列出当前文件夹下的文件和文件夹</span><br><span class="line">dir /A:H ./ //显示当前文件夹下的隐藏的文件和文件夹</span><br><span class="line">dir d:\ //显示d盘目录列表</span><br><span class="line">dir /4 //用4位数字显示年</span><br></pre></td></tr></table></figure></p>
+<p>全部选项：</p>
+<ul>
+<li>/A  显示具有指定属性的文件。属性:D  目录、R  只读文件、H  隐藏文件、A  准备存档的文件、S  系统文件、I  无内容索引文件、L  解析点、-  表示“否”的前缀</li>
+<li>/B  使用空格式(没有标题信息或摘要)。（对于文件来说，只显示文件名和扩展名，这一条比较实用！）</li>
+<li>/C  在文件大小中显示千位数分隔符。这是默认值。用 /-C 来禁用分隔符显示。</li>
+<li>/D  跟宽式相同，但文件是按栏分类列出的。</li>
+<li>/L  用小写。</li>
+<li>/N  新的长列表格式，其中文件名在最右边。</li>
+<li>/O  用分类顺序列出文件。排列顺序：N  按名称(字母顺序)、S  按大小(从小到大)、E  按扩展名(字母顺序)、D  按日期/时间(从先到后)、G  组录优先、-  反转顺序的前缀</li>
+<li>/P  在每个信息屏幕后暂停。</li>
+<li>/Q  显示文件所有者。</li>
+<li>/R  显示文件的备用数据流。</li>
+<li>/S  显示指定目录和所有子目录中的文件。</li>
+<li>/T  控制显示或用来分类的时间字符域。时间段      C  创建时间、A  上次访问时间、W  上次写入的时间</li>
+<li>/W  用宽列表格式。</li>
+<li>/X  显示为非 8.3 文件名产生的短名称。格式是 /N 的格式，短名称插在长名称前面。如果没有短名称，在其位置则显示空白。</li>
+<li>/4  用四位数字显示年</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title="0" data-url="http://link.hhtjim.com/163/5146554.mp3"></li>
+                    
+                        <li title="1" data-url="http://link.hhtjim.com/qq/001faIUs4M2zna.mp3"></li>
+                    
+                </ul>
+            
+        </div>
+        
+
+    </div>
     
+</div>
+
+
+    </div>
+</div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
