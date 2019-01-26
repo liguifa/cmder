@@ -207,8 +207,8 @@
             if(result.length > 0) {
                 var list = document.createElement("ul");
                 for(var i in result) {
-                    var tag = '<div class="search-tag"><img class="search-tag-dot" src="'+getTagIconByTag(posts[i]["tags"][0])+'" /><span>'+posts[i]["tags"][0]+'</span></div>';
-                    list.innerHTML += "<li><a href='/cmdlet/"+posts[i].url+"' target='_blank'>"+posts[i].title+"</a>"+tag+"</li>";
+                    var tag = '<div class="search-tag"><img class="search-tag-dot" src="'+getTagIconByTag(result[i]["tags"][0])+'" /><span>'+result[i]["tags"][0]+'</span></div>';
+                    list.innerHTML += "<li><a href='/cmdlet/"+result[i].url+"' target='_blank'>"+result[i].title+"</a>"+tag+"</li>";
                 }
                 $("#search-result").html(list);
                 $("#search-result").css("display", "block");
