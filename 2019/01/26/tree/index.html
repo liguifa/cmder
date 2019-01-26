@@ -236,7 +236,7 @@ tree (选项) (参数)
                 var list = document.createElement("ul");
                 for(var i in result) {
                     var tag = '<div class="search-tag"><img class="search-tag-dot" src="'+getTagIconByTag(result[i]["tags"][0])+'" /><span>'+result[i]["tags"][0]+'</span></div>';
-                    list.innerHTML += "<li><a href='/"+result[i].url+"' target='_blank'>"+result[i].title+"</a>"+tag+"</li>";
+                    list.innerHTML += "<li><a href='"+result[i].url+"' target='_blank'>"+result[i].title+"</a>"+tag+"</li>";
                 }
                 $("#search-result").html(list);
                 $("#search-result").css("display", "block");
