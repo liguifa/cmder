@@ -11,7 +11,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="命令知否,linux命令,window命令,shell,"> 
-    
+    <meta name="description" content="cd 切换用户当前目录用来切换用户当前目录当指定目录，这个指定目录可以是相对路径也可以是绝对路径一些常用的特殊符号：
+
+~   用户主目录
+.    当前目录
+..   上一级目录
+
+命令示例：12,"> 
     <meta name="author" content="liguifa"> 
     <link rel="alternative" href="atom.xml" title="命令知否" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -47,10 +53,19 @@
         <div class="stuff">
             <span>一月 26, 2019</span>
             
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
 
         </div>
         <div class="content markdown">
-            
+            <h3 id="tree-列出目录内容"><a href="#tree-列出目录内容" class="headerlink" title="tree 列出目录内容"></a>tree 列出目录内容</h3><p>用于以树状图列出目录的内容<br>该命令需要执行安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install tree //Mac安装</span><br><span class="line">yum install tree //center os安装</span><br><span class="line">apt-get install tree //ubuntu安装</span><br></pre></td></tr></table></figure></p>
+<p>一些常用参数：</p>
+<ul>
+<li>-F 文件夹后面加上/</li>
+<li>-C 彩色输出</li>
+</ul>
+<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tree ./public //列出public下的结构</span><br><span class="line">tree ./ | grep 04 //列出当前目录的结构并执行搜索</span><br></pre></td></tr></table></figure></p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
