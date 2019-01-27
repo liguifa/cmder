@@ -30,7 +30,7 @@ npm init
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">tree</h3>
+    <h3 class="subtitle">npm</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -47,49 +47,63 @@ npm init
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">tree</h1>
+        <h1 class="title">npm</h1>
         <div class="stuff">
-            <span>一月 26, 2019</span>
+            <span>一月 27, 2019</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Node/">Node</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h3 id="tree-列出目录内容"><a href="#tree-列出目录内容" class="headerlink" title="tree 列出目录内容"></a>tree 列出目录内容</h3><p>用于以树状图列出目录的内容<br>该命令需要执行安装</p>
+            <h3 id="npm-node包管理工具命令"><a href="#npm-node包管理工具命令" class="headerlink" title="npm node包管理工具命令"></a>npm node包管理工具命令</h3><p>npm是JavaScript的包管理器，也是世界上最大的软件注册中心。发现可重用代码的包——并以强大的新方式组装它们。</p>
 <blockquote>
-<p>tree (选项) (参数)  </p>
+<p>npm init</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install tree //Mac安装</span><br><span class="line">yum install tree //center os安装</span><br><span class="line">apt-get install tree //ubuntu安装</span><br></pre></td></tr></table></figure>
-<p>一些常用参数：</p>
+<p>这个命令会在当前目录生成一个package.json文件，这个文件中会记录一些关于项目的信息，比如：项目的作者，git地址，入口文件、命令设置、项目名称和版本号等等，一般情况下这个文件是必须要有的，方便后续的项目添加和其他开发人员的使用。</p>
+<blockquote>
+<p>npm install 参数</p>
+</blockquote>
+<p>全部参数:</p>
 <ul>
-<li>-F 文件夹后面加上/</li>
-<li>-C 彩色输出</li>
+<li>-g 全局安装</li>
+<li>–save 本地运行依赖安装,上线后仍需要的依赖</li>
+<li>–save-dev 开发时依赖,只在开发时需要的依赖</li>
 </ul>
-<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tree ./public //列出public下的结构</span><br><span class="line">tree ./ | grep 04 //列出当前目录的结构并执行搜索</span><br></pre></td></tr></table></figure></p>
-<p>全部选项：</p>
-<ul>
-<li>-a 显示所有文件和目录。</li>
-<li>-A 使用ASNI绘图字符显示树状图而非以ASCII字符组合。</li>
-<li>-C 在文件和目录清单加上色彩，便于区分各种类型。</li>
-<li>-d 显示目录名称而非内容。</li>
-<li>-D 列出文件或目录的更改时间。</li>
-<li>-f 在每个文件或目录之前，显示完整的相对路径名称。</li>
-<li>-F 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上”*”,”/“,”=”,”@”,”|”号。</li>
-<li>-g 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</li>
-<li>-i 不以阶梯状列出文件或目录名称。</li>
-<li>-I&lt;范本样式&gt; 不显示符合范本样式的文件或目录名称。</li>
-<li>-l 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</li>
-<li>-n 不在文件和目录清单加上色彩。</li>
-<li>-N 直接列出文件和目录名称，包括控制字符。</li>
-<li>-p 列出权限标示。</li>
-<li>-P&lt;范本样式&gt; 只显示符合范本样式的文件或目录名称。</li>
-<li>-q 用”?”号取代控制字符，列出文件和目录名称。</li>
-<li>-s 列出文件或目录大小。</li>
-<li>-t 用文件和目录的更改时间排序。</li>
-<li>-u 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</li>
-<li>-x 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该子目录予以排除在寻找范围外。</li>
-</ul>
+<p>–save、–save-dev参数将模块的版本信息保存到package.json的dependencies（生产环境依赖）中和devDependencies（开发环境依赖）中</p>
+<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install react --save //本地安装react</span><br><span class="line">npm install react 2.0.0 --save //安装react并指定版本</span><br><span class="line">npm install webpack --save-dev //安装开发时依赖webopack</span><br><span class="line">npm install hexo -g //全局按照hexo</span><br><span class="line">npm install file://xxxx --save //安装本地项目</span><br><span class="line">npm nstall https://github.com/xxxx.git --save //安装git项目</span><br><span class="line">npm install //安装package.json里面指定的全部依赖</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>npm list 或 npm ll 或 npm la 或 npm ls</p>
+</blockquote>
+<p>查看所有已经安装的模块 ll 、 ls 、 la 三个命令的列表的展示方式不一样 </p>
+<blockquote>
+<p>npm uninstall packagename [options]<br>npm remove packagename<br>npm rm packagename<br>npm r packeagename<br>npm un packagename<br>npm unlink  packagename</p>
+</blockquote>
+<p>卸载已经安装的模块，后面的options参数意思与安装时候的意思一样</p>
+<blockquote>
+<p>npm outdated</p>
+</blockquote>
+<p>这个命令会列出所有已经过时了的模块，对于已经过时了的模块可以使用下面的命令去更新</p>
+<blockquote>
+<p>npm update [-g]</p>
+</blockquote>
+<p>更新已经安装的模块(或全局的模块)</p>
+<blockquote>
+<p>npm help ‘命令’</p>
+</blockquote>
+<p>查看某条命令的详细帮助</p>
+<blockquote>
+<p>npm root</p>
+</blockquote>
+<p>查看命令的绝对路径</p>
+<blockquote>
+<p>npm config</p>
+</blockquote>
+<p>设置npm命令的配置路径，这个命令一般用于设置代理，毕竟大部分都是国外的模块，不过个人还是比较喜欢用cnpm 这个命令是用的淘宝的镜像，用法与npm一样，速度还可以。</p>
+<blockquote>
+<p>npm run script</p>
+</blockquote>
+<p>运行在是在package.json 中自定义的一些启动、重启、停止服务之类的命令。可以在package.json文件的scripts字段里自定义。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;webpack&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;webpack-dev-server main.js,</span><br><span class="line">    &quot;deploy&quot;: &quot;set NODE_ENV=production&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

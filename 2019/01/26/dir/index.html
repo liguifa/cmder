@@ -11,16 +11,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="命令知否,linux命令,window命令,shell,"> 
-    <meta name="description" content="命令知否,一个可以搜索命令的网站，这里包含了你所有想知道的命令的,dir 显示指定目录下的文件和文件夹用来查看当前目录或指定目录下的有那些文件和文件夹
+    <meta name="description" content="命令知否,一个可以搜索命令的网站，这里包含了你所有想知道的命令的,npm node包管理工具命令npm是JavaScript的包管理器，也是世界上最大的软件注册中心。发现可重用代码的包——并以强大的新方式组装它们。
 
-dir (选项) [path]
+npm init
 
-一些常用选项：
-
-/A:H 显示隐藏文件
-/A:D 显示目录
-
-命令示例：1,"> 
+这个命令会在当前目录生成一,"> 
     <meta name="author" content="liguifa"> 
     <link rel="alternative" href="atom.xml" title="命令知否" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -225,22 +220,28 @@ dir (选项) [path]
             switch(name) {
                 case "Windows": return "http://tous-logos.com/wp-content/uploads/2017/04/Windows-logo.png";
                 case "Linux": return "https://tse3.mm.bing.net/th?id=OIP.hYr3PjRLGAm7nluRO3PCcwHaIL&pid=Api&w=1979&h=2186&rs=1&p=0";
+                case "Dos": return "http://www.betaarchive.co.uk/imageupload/1223913231.or.63669.png";
+                case "Node": return "http://www.netgains.org/wp-content/uploads/2014/01/node_js.png";
             }
         }
         $("#search").on("input", function(e){
             var result = e.target.value === "" ? [] : posts.filter(function(post) {
-                return (new RegExp(e.target.value)).test(post.title)
+                return (new RegExp(e.target.value)).test(post.title) || (new RegExp(e.target.value)).test(post.description)
             });
             if(result.length > 0) {
                 var list = document.createElement("ul");
                 for(var i in result) {
+                    var avatar = '<div class="search-avatar"><span class="search-avatar-image"><img src="'+getTagIconByTag(result[i]["tags"][0])+'"></span></div>';
                     var tag = '<div class="search-tag"><img class="search-tag-dot" src="'+getTagIconByTag(result[i]["tags"][0])+'" /><span>'+result[i]["tags"][0]+'</span></div>';
-                    list.innerHTML += "<li><a href='"+result[i].url+"' target='_blank'>"+result[i].title+"</a>"+tag+"</li>";
+                    var comment = '<div class="search-description">'+result[i].description+'</div>';
+                    list.innerHTML += "<li>"+avatar+"<div class='search-content'><div class='search-title'><h4><a href='"+result[i].url+"' target='_blank'>"+result[i].title+"</a></h4>"+tag+"</div>"+comment+"</div></li>";
                 }
+                $(".search").css("top", "-400px")
                 $("#search-result").html(list);
                 $("#search-result").css("display", "block");
             } else {
                 $("#search-result").css("display", "none");
+                $(".search").css("top", "0px")
             }
         });
     });
