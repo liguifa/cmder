@@ -28,7 +28,7 @@ chkntfs volume: […]chkntfs ,">
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">cacls</h3>
+    <h3 class="subtitle">chkntfs</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -45,7 +45,7 @@ chkntfs volume: […]chkntfs ,">
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">cacls</h1>
+        <h1 class="title">chkntfs</h1>
         <div class="stuff">
             <span>一月 27, 2019</span>
             
@@ -54,22 +54,19 @@ chkntfs volume: […]chkntfs ,">
 
         </div>
         <div class="content markdown">
-            <h3 id="cacls-显示或者修改文件的访问控制列表"><a href="#cacls-显示或者修改文件的访问控制列表" class="headerlink" title="cacls 显示或者修改文件的访问控制列表"></a>cacls 显示或者修改文件的访问控制列表</h3><p>显示或者修改文件的访问控制表，在命令中可以使用通配符指定多个文件，也可以在命令中指定多个用户。</p>
+            <h3 id="chkntfs-在启动时显示或修改磁盘检查。"><a href="#chkntfs-在启动时显示或修改磁盘检查。" class="headerlink" title="chkntfs 在启动时显示或修改磁盘检查。"></a>chkntfs 在启动时显示或修改磁盘检查。</h3><p>显示或指定在启动计算机时计划的自动系统检查是否在 FAT、FAT32 或者 NTFS 卷上运行。</p>
 <blockquote>
-<p>cacls filename [/T] [/E] [/C] [/G usererm] [/R user […]] [/P usererm […]] [/D user […]]</p>
+<p>chkntfs volume: […]<br>chkntfs [/d]<br>chkntfs [/t[:time]]<br>chkntfs [/x volume: […]]<br>chkntfs [/c volume: […]]</p>
 </blockquote>
-<p>全部选项：</p>
+<p>全部选项:</p>
 <ul>
-<li>Filename：显示访问控制列表(以下简称ACL)</li>
-<li>/T：更改当前目录及其所有子目录中指定文件的ACL</li>
-<li>/E：编辑ACL而不替换</li>
-<li>/C：在出现拒绝访问错误时继续 　　</li>
-<li>/G Userer:perm：赋予指定用户访问权限，Perm代表不同级别的访问权限，其值可以是R(读取)、W(写入)、C(更改，写入)、F(完全控制)等</li>
-<li>/R user：撤销指定用户的访问权限，注意该参数仅在与“/E”一起使用时有效</li>
-<li>/P user：perm：替换指定用户的访问权限，perm的含义同前，但增加了“N(无)”的选项</li>
-<li>/D user：拒绝指定用户的访问</li>
+<li>volume   指定驱动器号(后面跟一个冒号)、装入点或卷名。</li>
+<li>/D       将计算机恢复成默认状态，启动时检查所有驱动器，并对有问题的驱动器执行 chkdsk 命令。</li>
+<li>/T:time  将 AUTOCHK 初始递减计数时间改成指定的时间，单位为秒数。如果没有指定时间，则显示当前设置。</li>
+<li>/X       排除启动时不作检查的驱动器。上次执行此命令排除的驱动器此时无效。</li>
+<li>/C       安排启动时检查驱动器，如果驱动器有问题，运行 chkdsk。</li>
 </ul>
-<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cacls C:\test //查看C:\test文件夹的访问控制权限</span><br><span class="line">cacls C:\ruery /t /e /c /g ruery:F //给予本地用户ruery完全控制C:\ruery文件夹及子文件夹中所有文件的访问权限</span><br><span class="line">cacls C:\ruery /t /e /c /r ruery //撤销ruery用户对C:\ruery文件夹及其子文件夹的访问控制权限</span><br><span class="line">cacls C:\ruery /t /e /c /d ruery //拒绝用户的访问</span><br><span class="line">cacls.exe c: /e /t /g everyone:F //把d盘设置为everyone可以浏览</span><br></pre></td></tr></table></figure></p>
+<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chkntfs /t //显示 Autochk.exe 开始的倒计时时间</span><br><span class="line">chkntfs /t:30 //更改 Autochk.exe 开始的倒计时时间，以秒为单位键入时间</span><br><span class="line">chkntfs /x e:f: //排除 E:和 F:卷</span><br></pre></td></tr></table></figure></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">

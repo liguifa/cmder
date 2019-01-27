@@ -28,7 +28,7 @@ chkntfs volume: […]chkntfs ,">
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">cacls</h3>
+    <h3 class="subtitle">chcp</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -45,7 +45,7 @@ chkntfs volume: […]chkntfs ,">
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">cacls</h1>
+        <h1 class="title">chcp</h1>
         <div class="stuff">
             <span>一月 27, 2019</span>
             
@@ -54,22 +54,233 @@ chkntfs volume: […]chkntfs ,">
 
         </div>
         <div class="content markdown">
-            <h3 id="cacls-显示或者修改文件的访问控制列表"><a href="#cacls-显示或者修改文件的访问控制列表" class="headerlink" title="cacls 显示或者修改文件的访问控制列表"></a>cacls 显示或者修改文件的访问控制列表</h3><p>显示或者修改文件的访问控制表，在命令中可以使用通配符指定多个文件，也可以在命令中指定多个用户。</p>
-<blockquote>
-<p>cacls filename [/T] [/E] [/C] [/G usererm] [/R user […]] [/P usererm […]] [/D user […]]</p>
+            <h3 id="chcp-显示或设置活动代码页编号"><a href="#chcp-显示或设置活动代码页编号" class="headerlink" title="chcp 显示或设置活动代码页编号"></a>chcp 显示或设置活动代码页编号</h3><blockquote>
+<p>chcp (指定代码页编号)</p>
 </blockquote>
-<p>全部选项：</p>
-<ul>
-<li>Filename：显示访问控制列表(以下简称ACL)</li>
-<li>/T：更改当前目录及其所有子目录中指定文件的ACL</li>
-<li>/E：编辑ACL而不替换</li>
-<li>/C：在出现拒绝访问错误时继续 　　</li>
-<li>/G Userer:perm：赋予指定用户访问权限，Perm代表不同级别的访问权限，其值可以是R(读取)、W(写入)、C(更改，写入)、F(完全控制)等</li>
-<li>/R user：撤销指定用户的访问权限，注意该参数仅在与“/E”一起使用时有效</li>
-<li>/P user：perm：替换指定用户的访问权限，perm的含义同前，但增加了“N(无)”的选项</li>
-<li>/D user：拒绝指定用户的访问</li>
-</ul>
-<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cacls C:\test //查看C:\test文件夹的访问控制权限</span><br><span class="line">cacls C:\ruery /t /e /c /g ruery:F //给予本地用户ruery完全控制C:\ruery文件夹及子文件夹中所有文件的访问权限</span><br><span class="line">cacls C:\ruery /t /e /c /r ruery //撤销ruery用户对C:\ruery文件夹及其子文件夹的访问控制权限</span><br><span class="line">cacls C:\ruery /t /e /c /d ruery //拒绝用户的访问</span><br><span class="line">cacls.exe c: /e /t /g everyone:F //把d盘设置为everyone可以浏览</span><br></pre></td></tr></table></figure></p>
+<p>指定代码页。下表列出了所有支持的代码页及其国家(地区)或者语言： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">代码页</th>
+<th style="text-align:left">国家(地区)或语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">437</td>
+<td style="text-align:left">美国</td>
+</tr>
+<tr>
+<td style="text-align:left">708</td>
+<td style="text-align:left">阿拉伯文(ASMO 708)</td>
+</tr>
+<tr>
+<td style="text-align:left">720</td>
+<td style="text-align:left">阿拉伯文(DOS)</td>
+</tr>
+<tr>
+<td style="text-align:left">850</td>
+<td style="text-align:left">多语言(拉丁文 I)</td>
+</tr>
+<tr>
+<td style="text-align:left">852</td>
+<td style="text-align:left">中欧(DOS) - 斯拉夫语(拉丁文 II)</td>
+</tr>
+<tr>
+<td style="text-align:left">855</td>
+<td style="text-align:left">西里尔文(俄语)</td>
+</tr>
+<tr>
+<td style="text-align:left">857</td>
+<td style="text-align:left">土耳其语</td>
+</tr>
+<tr>
+<td style="text-align:left">860</td>
+<td style="text-align:left">葡萄牙语</td>
+</tr>
+<tr>
+<td style="text-align:left">861</td>
+<td style="text-align:left">冰岛语</td>
+</tr>
+<tr>
+<td style="text-align:left">862</td>
+<td style="text-align:left">希伯来文(DOS)</td>
+</tr>
+<tr>
+<td style="text-align:left">863</td>
+<td style="text-align:left">加拿大 - 法语</td>
+</tr>
+<tr>
+<td style="text-align:left">865</td>
+<td style="text-align:left">日耳曼语</td>
+</tr>
+<tr>
+<td style="text-align:left">866</td>
+<td style="text-align:left">俄语 - 西里尔文(DOS)</td>
+</tr>
+<tr>
+<td style="text-align:left">869</td>
+<td style="text-align:left">现代希腊语</td>
+</tr>
+<tr>
+<td style="text-align:left">874</td>
+<td style="text-align:left">泰文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">932</td>
+<td style="text-align:left">日文(Shift-JIS)</td>
+</tr>
+<tr>
+<td style="text-align:left">936</td>
+<td style="text-align:left">中国 - 简体中文(GB2312)</td>
+</tr>
+<tr>
+<td style="text-align:left">949</td>
+<td style="text-align:left">韩文</td>
+</tr>
+<tr>
+<td style="text-align:left">950</td>
+<td style="text-align:left">繁体中文(Big5)</td>
+</tr>
+<tr>
+<td style="text-align:left">1200</td>
+<td style="text-align:left">Unicode</td>
+</tr>
+<tr>
+<td style="text-align:left">1201</td>
+<td style="text-align:left">Unicode (Big-Endian)</td>
+</tr>
+<tr>
+<td style="text-align:left">1250</td>
+<td style="text-align:left">中欧(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1251</td>
+<td style="text-align:left">西里尔文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1252</td>
+<td style="text-align:left">西欧(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1253</td>
+<td style="text-align:left">希腊文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1254</td>
+<td style="text-align:left">土耳其文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1255</td>
+<td style="text-align:left">希伯来文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1256</td>
+<td style="text-align:left">阿拉伯文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1257</td>
+<td style="text-align:left">波罗的海文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">1258</td>
+<td style="text-align:left">越南文(Windows)</td>
+</tr>
+<tr>
+<td style="text-align:left">20866</td>
+<td style="text-align:left">西里尔文(KOI8-R)</td>
+</tr>
+<tr>
+<td style="text-align:left">21866</td>
+<td style="text-align:left">西里尔文(KOI8-U)</td>
+</tr>
+<tr>
+<td style="text-align:left">28592</td>
+<td style="text-align:left">中欧(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28593</td>
+<td style="text-align:left">拉丁文 3 (ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28594</td>
+<td style="text-align:left">波罗的海文(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28595</td>
+<td style="text-align:left">西里尔文(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28596</td>
+<td style="text-align:left">阿拉伯文(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28597</td>
+<td style="text-align:left">希腊文(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">28598</td>
+<td style="text-align:left">希伯来文(ISO-Visual)</td>
+</tr>
+<tr>
+<td style="text-align:left">38598</td>
+<td style="text-align:left">希伯来文(ISO-Logical)</td>
+</tr>
+<tr>
+<td style="text-align:left">50000</td>
+<td style="text-align:left">用户定义的</td>
+</tr>
+<tr>
+<td style="text-align:left">50001</td>
+<td style="text-align:left">自动选择</td>
+</tr>
+<tr>
+<td style="text-align:left">50220</td>
+<td style="text-align:left">日文(JIS)</td>
+</tr>
+<tr>
+<td style="text-align:left">50221</td>
+<td style="text-align:left">日文(JIS-允许一个字节的片假名)</td>
+</tr>
+<tr>
+<td style="text-align:left">50222</td>
+<td style="text-align:left">日文(JIS-允许一个字节的片假名 - SO/SI)</td>
+</tr>
+<tr>
+<td style="text-align:left">50225</td>
+<td style="text-align:left">韩文(ISO)</td>
+</tr>
+<tr>
+<td style="text-align:left">50932</td>
+<td style="text-align:left">日文(自动选择)</td>
+</tr>
+<tr>
+<td style="text-align:left">50949</td>
+<td style="text-align:left">韩文(自动选择)</td>
+</tr>
+<tr>
+<td style="text-align:left">51932</td>
+<td style="text-align:left">日文(EUC)</td>
+</tr>
+<tr>
+<td style="text-align:left">51949</td>
+<td style="text-align:left">韩文(EUC)</td>
+</tr>
+<tr>
+<td style="text-align:left">52936</td>
+<td style="text-align:left">简体中文(HZ)</td>
+</tr>
+<tr>
+<td style="text-align:left">65000</td>
+<td style="text-align:left">Unicode (UTF-7)</td>
+</tr>
+<tr>
+<td style="text-align:left">65001</td>
+<td style="text-align:left">Unicode (UTF-8)</td>
+</tr>
+</tbody>
+</table>
+<p>命令示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chcp //列出当前活动代码页编号</span><br><span class="line">chcp 936 //切换当前活动代码页为中文</span><br></pre></td></tr></table></figure></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
